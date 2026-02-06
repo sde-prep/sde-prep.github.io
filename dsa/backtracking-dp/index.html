@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backtracking & DP – DSA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f9fafb;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            counter-reset: row;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            padding: 36px 20px;
+            text-align: center;
+        }
+
+        .banner h1 {
+            margin: 0 0 8px;
+            color: #ffffff;
+        }
+
+        .banner p {
+            margin: 0;
+            color: #fce7f3;
+            max-width: 1100px;
+            margin-inline: auto;
+        }
+
+        .section-header {
+            background: #f3f4f6;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 70px 1fr 90px;
+            padding: 14px 20px;
+            border-top: 1px solid #e5e7eb;
+            align-items: center;
+            counter-increment: row;
+        }
+
+        .row:hover {
+            background: #fafafa;
+        }
+
+        .seq::before {
+            content: counter(row);
+            color: #6b7280;
+        }
+
+        .problem {
+            font-weight: 500;
+        }
+
+        .difficulty {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .easy { color: #16a34a; }
+        .medium { color: #f59e0b; }
+        .hard { color: #ef4444; }
+        .note { color: #6b7280; font-style: italic; }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- ================= BANNER ================= -->
+    <div class="banner">
+        <h1>Backtracking & Dynamic Programming</h1>
+        <p>
+            Classic recursion, memoization, grid DP, knapsack patterns, string DP, games, and optimization problems.
+        </p>
+    </div>
+
+    <!-- ================= STOCK ================= -->
+    <div class="section-header">Stock Buy & Sell</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">At most one transaction</div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">At most two transactions</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Unlimited transactions</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">At most k transactions (Backtracking + DP)</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= MATRIX ================= -->
+    <div class="section-header">Matrix (Backtracking + DP)</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Longest Consecutive Increasing Sequence in a Matrix</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Palindromic Paths from TopLeft to BottomRight</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Number of Islands (DFS / BFS / Disjoint Set)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Flood Fill</div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Replace Surrounded O with X</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Paths with Exactly K Coins (Right & Down)</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Collect Max Coins with Direction Change Rules</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Collect Max Coins (Forward + Return Path)</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Two Traversals Max Points (3D DP)</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= CHESS ================= -->
+    <div class="section-header">Chessboard Problems</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Count Knight Moves</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Knight Tour (Generate & Validate)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Count Queen Moves with Blockers</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">N-Queen Problem</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= PERMUTATION ================= -->
+    <div class="section-header">Permutations & Combinations</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Power Set (All Subsets)</div><div class="difficulty easy">Easy</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Unique Permutations (Distinct Elements)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Unique Permutations (With Duplicates)</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Next Permutation</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Kth Permutation</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Combinations of Size K</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Combination Sum (Unique & Duplicate Variants)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Count Subsets with Sum = K (Memoization)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Count Subsets with Sum Divisible by K</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= PARENTHESIS ================= -->
+    <div class="section-header">Parenthesis & Expressions</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Generate Balanced Parentheses</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Different Ways to Add Parentheses</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Boolean Parenthesization</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= STRING ================= -->
+    <div class="section-header">String (Backtracking + DP)</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Word Search (Single Word)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Word Search II (Trie)</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Word Ladder (Shortest Path)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Word Ladder II (All Paths)</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Distinct Subsequences</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Edit Distance</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Interleaving String</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Restore IP Addresses</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Decode Ways</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Letter Combinations of Phone Number</div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Scramble String</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= GAMES ================= -->
+    <div class="section-header">Games</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Sudoku (Generator / Validator / Solver)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Tug of War</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Optimal Strategy for a Game</div><div class="difficulty medium">Medium</div></div>
+
+    <!-- ================= KNAPSACK ================= -->
+    <div class="section-header">Knapsack & DP Classics</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Fractional Knapsack</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">0/1 Knapsack</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Bounded Knapsack</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Unbounded Knapsack</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Coin Change (Min Coins & Ways)</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">LCS (Length, One, All)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">LPS (LCS Variant)</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">LIS (N² & NlogN)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">LIS Variants (Box Stacking, Bridges)</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Wildcard Pattern Matching</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Word Break (Check & Print)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Word Wrap Problem</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Candy Distribution</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Min Jumps (Check & Count)</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Max Subsequence with Mod Condition</div><div class="difficulty hard">Hard</div></div>
+
+</div>
+
+<footer>
+    <a href="../index.html">⬅ Back to DSA</a>
+</footer>
+
+</body>
+</html>
