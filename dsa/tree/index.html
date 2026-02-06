@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tree Problems – DSA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f9fafb;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            counter-reset: row;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #22c55e, #0ea5e9);
+            padding: 36px 20px;
+            text-align: center;
+        }
+
+        .banner h1 {
+            margin: 0 0 8px;
+            color: #ffffff;
+        }
+
+        .banner p {
+            margin: 0;
+            color: #dcfce7;
+            max-width: 900px;
+            margin-inline: auto;
+        }
+
+        .section-header {
+            background: #f3f4f6;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 70px 1fr 90px;
+            padding: 14px 20px;
+            border-top: 1px solid #e5e7eb;
+            align-items: center;
+            counter-increment: row;
+        }
+
+        .row:hover {
+            background: #fafafa;
+        }
+
+        .seq::before {
+            content: counter(row);
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .problem a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+        }
+
+        .problem a:hover {
+            text-decoration: underline;
+        }
+
+        .difficulty {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .easy { color: #16a34a; }
+        .medium { color: #f59e0b; }
+        .hard { color: #ef4444; }
+        .note { color: #6b7280; font-style: italic; }
+
+        footer {
+            text-align: center;
+            margin: 30px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- ================= BANNER ================= -->
+    <div class="banner">
+        <h1>Tree Data Structures</h1>
+        <p>
+            Binary Tree, BST, Trie, Quad Tree, Segment Tree — definitions,
+            traversals, construction, views, paths, LCA, and advanced patterns.
+        </p>
+    </div>
+
+    <!-- ================= TRAVERSALS ================= -->
+    <div class="section-header">Traversals</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">DFS – InOrder (Recursive, Iterative, Morris)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">DFS – PreOrder (Recursive, Iterative, Morris)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">DFS – PostOrder (Recursive, Iterative)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">BFS – Level Order (L→R / R→L)</div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">BFS - ZigZag Level Order Traversal (One/Two Level)</div><div class="difficulty medium">Medium</div></div>
+
+    <!-- ================= CONSTRUCTION ================= -->
+    <div class="section-header">Tree Construction</div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank">InOrder + PreOrder</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" target="_blank">InOrder + PostOrder</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/construct-tree-inorder-level-order-traversals/" target="_blank">InOrder + LevelOrder</a></div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/" target="_blank">PreOrder + PostOrder (Full BT only)</a></div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= VIEWS ================= -->
+    <div class="section-header">Tree Views</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Left / Right View</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Top / Bottom View</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Diagonal Views (Left / Right)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Boundary Traversal</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= HEIGHT & DIAMETER ================= -->
+    <div class="section-header">Height / Diameter</div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank">Max Height</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/" target="_blank">Min Height</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank">Check Height Balanced</a></div><div class="difficulty easy">Easy</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">Diameter of Binary Tree</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Max Sum Diameter Path (Kadane + Diameter)</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= EXTRA BT ================= -->
+    <div class="section-header">Binary Tree – Advanced</div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/find-largest-value-in-each-tree-row/" target="_blank">Average of Each Level</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/merge-two-binary-trees/" target="_blank">Merge Two Binary Trees</a></div><div class="difficulty easy">Easy</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/" target="_blank">PreOrder → Linked List</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">InOrder → Doubly Linked List</div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/" target="_blank">LCA of Two Nodes</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/find-distance-between-two-nodes-of-a-binary-tree/" target="_blank">Min Distance Between Two Nodes</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">Check Symmetric / Mirror</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank">Invert / Mirror Tree</a></div><div class="difficulty easy">Easy</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/count-complete-tree-nodes/" target="_blank">Count Complete BT Nodes &lt; O(N)</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/binary-tree-burning/" target="_blank">Burn Tree</a></div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/" target="_blank">Nodes at Distance K</a></div><div class="difficulty medium">Medium</div></div>
+
+    <!-- ================= ROOT PATHS ================= -->
+    <div class="section-header">Root to Leaf Paths</div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/binary-tree-paths/" target="_blank">All Root to Leaf Paths</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/path-sum/" target="_blank">Path Sum Exists</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/path-sum-ii/" target="_blank">All Paths with Given Sum</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/sum-root-to-leaf-numbers/" target="_blank">Sum of Root to Leaf Numbers</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Reverse Tree Path to a Node</div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= TRIE ================= -->
+    <div class="section-header">Trie</div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/implement-trie-prefix-tree/" target="_blank">Trie Implementation</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/" target="_blank">Add & Search Word</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/search-suggestions-system/" target="_blank">Search Suggestion System</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/" target="_blank">Remove Sub Folders (Trie / Sort)</a></div><div class="difficulty medium">Medium</div></div>
+
+    <!-- ================= BST ================= -->
+    <div class="section-header">Binary Search Tree (BST)</div>
+
+    <div class="row"><div class="seq"></div><div class="problem">BST Core: Search, Insert, Delete</div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">Validate BST</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/unique-binary-search-trees-ii/" target="_blank">Construct All BSTs (1..N)</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem">Construct BST from Level Order</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem">Construct BST from PreOrder (3 methods)</div><div class="difficulty hard">Hard</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/" target="_blank">Sorted Array → Balanced BST</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/check-whether-bst-contains-dead-end/" target="_blank">Dead End in BST</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/recover-binary-search-tree/" target="_blank">Swap Two Incorrect BST Nodes</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/binary-search-tree-iterator/" target="_blank">BST Iterator / InOrder DLL</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/minimum-absolute-difference-in-bst/" target="_blank">Min Difference Between BST Nodes</a></div><div class="difficulty easy">Easy</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" target="_blank">Kth Smallest in BST</a></div><div class="difficulty medium">Medium</div></div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/largest-bst-subtree/" target="_blank">Largest Sum BST in Binary Tree</a></div><div class="difficulty hard">Hard</div></div>
+
+    <!-- ================= ADVANCED TREES ================= -->
+    <div class="section-header">Quad Tree & Segment Tree</div>
+
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/construct-quad-tree/" target="_blank">Construct Quad Tree</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/range-sum-query-mutable/" target="_blank">Segment Tree – Range Sum Query</a></div><div class="difficulty medium">Medium</div></div>
+
+</div>
+
+<footer>
+    <a href="../index.html">⬅ Back to DSA</a>
+</footer>
+
+</body>
+</html>
