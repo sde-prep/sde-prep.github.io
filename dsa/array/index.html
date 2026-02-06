@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Problems – DSA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f8fafc;
+            padding: 24px;
+            color: #0f172a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        /* Reset numbering per section */
+        .section {
+            counter-reset: row;
+        }
+
+        .section-header {
+            background: #f1f5f9;
+            padding: 18px 22px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 50px 1fr 90px;
+            padding: 14px 22px;
+            border-top: 1px solid #e5e7eb;
+            align-items: center;
+            counter-increment: row;
+        }
+
+        .row:hover {
+            background: #f9fafb;
+        }
+
+        .seq::before {
+            content: counter(row);
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .problem a {
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        .problem a:hover {
+            text-decoration: underline;
+        }
+
+        .difficulty {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .easy { color: #16a34a; }
+        .medium { color: #f59e0b; }
+        .hard { color: #ef4444; }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+<div style="
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    padding: 36px 20px;
+    text-align: center;
+">
+    <h1 style="
+        margin: 0 0 8px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.3px;
+    ">
+        Array
+    </h1>
+
+    <p style="
+        margin: 0 auto;
+        max-width: 700px;
+        font-size: 1rem;
+        color: #e0f2fe;
+        line-height: 1.6;
+    ">
+        Foundational array problems covering sliding window, prefix sums,
+        two pointers, subarrays, rotations, and key interview patterns.
+    </p>
+</div>
+
+<div class="container">
+    <!-- ================= DESIGN ================= -->
+    <div class="section">
+        <div class="section-header">Design</div>
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/insert-delete-getrandom-o1/" target="_blank">
+                    Design an O(1) Data Structure for Insert, Delete & Random
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+    </div>
+
+    <!-- ================= MOORE VOTING ================= -->
+    <div class="section">
+        <div class="section-header">Moore’s Voting Algorithm</div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/majority-element/" target="_blank">
+                    Majority Element (&gt; n/2)
+                </a>
+            </div>
+            <div class="difficulty easy">Easy</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/majority-element-ii/" target="_blank">
+                    Majority Element II (&gt; n/3)
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+    </div>
+
+    <!-- ================= ARRAY PRODUCT ================= -->
+    <div class="section">
+        <div class="section-header">Array Product</div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">
+                    Array Product Puzzle
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://www.geeksforgeeks.org/dsa/minimum-product-subset-array/" target="_blank">
+                    Minimum Product Subset
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/maximum-product-subarray/" target="_blank">
+                    Maximum Product Subarray
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+    </div>
+
+    <!-- ================= BINARY ARRAY ================= -->
+    <div class="section">
+        <div class="section-header">Binary Array</div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/max-consecutive-ones-iii/" target="_blank">
+                    Max Consecutive Ones (flip at most K zeroes)
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                Max Consecutive Ones (flip one subarray of 0s)
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                Largest subarray with equal continuous 0s & 1s (001101 → 4)
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+
+        <div class="row">
+            <div class="seq"></div>
+            <div class="problem">
+                <a href="https://leetcode.com/problems/contiguous-array/" target="_blank">
+                    Largest subarray with equal 0s & 1s (001101 → 6)
+                </a>
+            </div>
+            <div class="difficulty medium">Medium</div>
+        </div>
+    </div>
+
+    <!-- ================= HOUSE ROBBER ================= -->
+    <div class="section">
+        <div class="section-header">House Robber</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/house-robber/" target="_blank">House Robber (Linear)</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/house-robber-ii/" target="_blank">House Robber II (Circular)</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/house-robber-iii/" target="_blank">House Robber III (Binary Tree)</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+    <!-- ================= NUMBERS ================= -->
+    <div class="section">
+        <div class="section-header">Numbers</div>
+
+        <div class="row"><div class="seq"></div><div class="problem">Reorder array as per index array</div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/move-negative-numbers-beginning-positive-end-constant-extra-space/" target="_blank">Move negatives to start & positives to end (No extra space)</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem">Alternate negative & positive numbers (Any / Maintain order)</div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank">First Missing Positive</a></div><div class="difficulty hard">Hard</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/find-smallest-value-represented-sum-subset-given-array/" target="_blank">First positive missing not in subset sum</a></div><div class="difficulty hard">Hard</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank">Longest Consecutive Subsequence</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+    <!-- ================= ROTATION ================= -->
+    <div class="section">
+        <div class="section-header">Rotation</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/rotate-array/" target="_blank">Rotate an Array</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/queries-left-right-circular-shift-array/" target="_blank">Range Sum Query with Rotation</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/maximize-sum-arrii/" target="_blank">Max Sum of (a[i] × i) with Infinite Rotation</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+    <!-- ================= SUBARRAY ================= -->
+    <div class="section">
+        <div class="section-header">Subarray</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank">Kadane’s Algorithm</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/subarray-sums-divisible-by-k/" target="_blank">Subarrays with Sum Divisible by K</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank">Subarray Sum Equals K</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/maximum-sum-subarray-sum-less-equal-given-sum/" target="_blank">Max Subarray Sum &lt; K</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/maximum-erasure-value/" target="_blank">Unique Elements Subarray with Max Sum</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/get-the-maximum-score/" target="_blank">Max Sum from Two Arrays (Switching at Common Elements)</a></div><div class="difficulty hard">Hard</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/" target="_blank">Longest Subarray with Maximum AND</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/gas-station/" target="_blank">Gas Station Tour</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+    <!-- ================= TUPLE SUM ================= -->
+    <div class="section">
+        <div class="section-header">Tuple Sum</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum (Unsorted)</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank">Two Sum (Sorted)</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/two-sum-iii-data-structure-design/" target="_blank">Two Sum (Stream)</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/two-sum-iv-input-is-a-bst/" target="_blank">Two Sum (BST)</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/2-sum-pair-sum-closest-to-target/" target="_blank">Pair Sum Closest to X</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/" target="_blank">Pair Sum Divisible by K</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/3sum/" target="_blank">3 Sum</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/3sum-closest/" target="_blank">3 Sum Closest</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/4sum/" target="_blank">4 Sum</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+    <!-- ================= TWO NUMBERS ================= -->
+    <div class="section">
+        <div class="section-header">Two Numbers</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/maximum-difference-between-increasing-elements/" target="_blank">Maximum Difference Between Two Numbers</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://www.geeksforgeeks.org/dsa/find-the-minimum-distance-between-two-numbers/" target="_blank">Minimum Difference Between Two Numbers</a></div><div class="difficulty easy">Easy</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/contains-duplicate-ii/" target="_blank">Contains Duplicate II</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/contains-duplicate-iii/" target="_blank">Contains Duplicate III</a></div><div class="difficulty hard">Hard</div></div>
+    </div>
+
+    <!-- ================= TWO POINTERS ================= -->
+    <div class="section">
+        <div class="section-header">Two Pointers</div>
+
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank">Trapping Rain Water</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/fruit-into-baskets/" target="_blank">Maximum Fruits Collection within K Steps</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/" target="_blank">Maximum Subarray with Only 2 Values</a></div><div class="difficulty medium">Medium</div></div>
+        <div class="row"><div class="seq"></div><div class="problem"><a href="https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/" target="_blank">Shortest Subarray to Remove to Make Array Sorted</a></div><div class="difficulty medium">Medium</div></div>
+    </div>
+
+</div>
+
+<footer>
+    <a href="../index.html">⬅ Back to DSA</a>
+</footer>
+
+</body>
+</html>
 
