@@ -2,210 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bits Problems – DSA</title>
+    <title>Bits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-            counter-reset: row-counter;
-        }
-
-        .banner {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            padding: 36px 20px;
-            text-align: center;
-        }
-
-        .banner h1 {
-            margin: 0 0 8px;
-            color: #ffffff;
-        }
-
-        .banner p {
-            margin: 0;
-            color: #e0e7ff;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 60px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-            counter-increment: row-counter;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq::before {
-            content: counter(row-counter);
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .problem a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .problem a:hover {
-            text-decoration: underline;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div class="banner">
+    <div class="header">
         <h1>Bits Problems</h1>
         <p>
             Bit manipulation techniques, basic operations, and common interview problems.
         </p>
     </div>
 
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
     <!-- ================= BASIC OPERATIONS ================= -->
     <div class="section-header">Basic Operations</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a number is power of 2 – x != 0 && ((x & (x - 1)) == 0)</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a number is power of 2 &#x2192   x != 0 && ((x & (x - 1)) == 0)
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Calculate 2^n – 1 &lt;&lt; n</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">Calculate 2^n  &#x2192   1 &lt;&lt; n
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">XOR of two numbers – a ^ b</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">XOR of two numbers  &#x2192   a ^ b
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">XOR of two numbers without XOR operator – (a | b) &amp; (~a | ~b)</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">XOR of two numbers without XOR operator  &#x2192   (a | b) &amp; (~a | ~b)
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Multiply by 2 – x &lt;&lt; 1</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">Multiply by 2  &#x2192   x &lt;&lt; 1
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Divide by 2 – x &gt;&gt; 1</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">Divide by 2  &#x2192   x &gt;&gt; 1
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <!-- ================= LEFT/RIGHT MOST BITS ================= -->
     <div class="section-header">Left &amp; Right Most Bits</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">LeftMostBitNo of x – x != 0, { y=1; while(x>1) { x=x&gt;&gt;1; y=y&lt;&lt;1; } return y; }</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">LeftMostBitNo of x  &#x2192   x != 0, { y=1; while(x>1) { x=x&gt;&gt;1; y=y&lt;&lt;1; } return y; }
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Turn off LeftMostBit – x &amp; ~y</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Turn off LeftMostBit  &#x2192   x &amp; ~y
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">RightMostBitNo – x != 0, x &amp; ~(x-1) OR (x &amp; -x)</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">RightMostBitNo  &#x2192  x != 0, x &amp; ~(x-1) OR (x &amp; -x)
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Turn off RightMostBit – x != 0, x &amp; (x-1)</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Turn off RightMostBit  &#x2192   x != 0, x &amp; (x-1)
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><span class="na">Theory</span></div>
     </div>
 
     <!-- ================= MISSING NUMBERS & BINARY OPS ================= -->
     <div class="section-header">Missing Numbers & Binary Operations</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Find one missing number</a></div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Find one missing number
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/missing-number/description/" target="_blank">Solution</a></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Find 2 missing numbers OR one duplicate &amp; one missing</a></div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Find 2 missing numbers OR one duplicate &amp; one missing
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/find-missing-and-repeated-values/description/" target="_blank">Solution</a></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Add 2 binary number strings</a></div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Add 2 binary number strings
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/add-binary/description/" target="_blank">Solution</a></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Reverse Bits</a></div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Reverse Bits
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/reverse-bits/description/" target="_blank">Solution</a></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Every element appears 3 times except one – Find that number</a></div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Every element appears 3 times except one – Find that number
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/single-number-ii/description/" target="_blank">Solution</a></div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem"><a href="LCLink" target="_blank">Sort an array by bits count (Use Integer.bitCount)</a></div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Sort an array by bits count (Use Integer.bitCount)
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/description/" target="_blank">Solution</a></div>
     </div>
+
 </div>
 
 <footer>
