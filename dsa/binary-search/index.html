@@ -31,7 +31,7 @@
 
         .row {
             display: grid;
-            grid-template-columns: 60px 1fr 90px;
+            grid-template-columns: 40px 1fr 140px;
             padding: 14px 20px;
             border-top: 1px solid #e5e7eb;
             align-items: center;
@@ -41,29 +41,54 @@
             background: #fafafa;
         }
 
-        .seq {
-            color: #6b7280;
-            font-weight: 500;
+        .dot {
+            font-size: 1.5rem;
+            color: #9ca3af;
+            text-align: center;
         }
 
-        .problem a {
-            text-decoration: none;
+        .problem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
             color: #111;
+            flex-wrap: wrap;
+        }
+
+        /* Difficulty tags */
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .easy {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .hard {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .solve-link a {
+            text-decoration: none;
+            color: #2563eb;
             font-weight: 500;
         }
 
-        .problem a:hover {
+        .solve-link a:hover {
             text-decoration: underline;
         }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
 
         footer {
             text-align: center;
@@ -76,157 +101,170 @@
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div style="
-        background: linear-gradient(135deg, #0ea5e9, #6366f1);
-        padding: 36px 20px;
-        text-align: center;
-    ">
-        <h1 style="
-            margin: 0 0 8px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ffffff;
-        ">
+    <div style="background: linear-gradient(135deg, #0ea5e9, #6366f1); padding: 36px 20px;">
+        <h1 style="margin: 0 0 8px; font-size: 1.8rem; font-weight: 700; color: #ffffff;text-align: center;">
             Binary Search
         </h1>
-        <p style="
-            margin: 0 auto;
-            max-width: 750px;
-            font-size: 1rem;
-            color: #e0f2fe;
-            line-height: 1.6;
-        ">
-            Binary Search patterns across sorted arrays, rotated arrays, matrices,
-            answer space search, and peak finding — essential for cracking
-            log-time interview problems.
+        <p style="margin: 0 auto; max-width: auto; font-size: 1rem; color: #e0f2fe; line-height: 1.6;">
+            Binary search is an efficient algorithm for finding a target value in a sorted array or collection by repeatedly dividing the search space in half, achieving a time complexity of O(log n).
+            Below are some interview-ready binary search questions covering common patterns.
         </p>
     </div>
 
     <!-- ================= BASIC BINARY SEARCH ================= -->
     <div class="section-header">Basic Binary Search</div>
+
     <div class="row">
-        <div class="seq">1</div>
+        <div class="dot">•</div>
         <div class="problem">
-            <a href="https://leetcode.com/problems/binary-search/" target="_blank">
-                Find an element in a sorted array
-            </a>
+            Search for a target value in a sorted array
+            <span class="tag easy">Easy</span>
         </div>
-        <div class="difficulty easy">Easy</div>
+        <div class="solve-link">
+            <a href="https://leetcode.com/problems/binary-search/" target="_blank">Solution</a>
+        </div>
     </div>
 
     <div class="row">
-        <div class="seq">2</div>
+        <div class="dot">•</div>
         <div class="problem">
+            Find the first and last position of a target in a sorted array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
             <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank">
-                First & Last occurrence of an element in a sorted array
+                Solution
             </a>
         </div>
-        <div class="difficulty medium">Medium</div>
     </div>
 
     <div class="row">
-        <div class="seq">3</div>
+        <div class="dot">•</div>
         <div class="problem">
-            Find ceiling value of a number (7.1 → 8, 7 → 7)
+            Find the smallest element greater than or equal to a given number (ceiling)
+            <span class="tag easy">Easy</span>
         </div>
-        <div class="difficulty easy">Easy</div>
+        <div class="solve-link">
+            <a href="https://www.geeksforgeeks.org/dsa/ceiling-in-a-sorted-array/" target="_blank">
+                Solution
+            </a>
+        </div>
     </div>
 
     <div class="row">
-        <div class="seq">4</div>
+        <div class="dot">•</div>
         <div class="problem">
-            Find floor value of a number (7.1 → 7, 7 → 7)
+            Find the largest element smaller than or equal to a given number (floor)
+            <span class="tag easy">Easy</span>
         </div>
-        <div class="difficulty easy">Easy</div>
+        <div class="solve-link">
+            <a href="https://www.geeksforgeeks.org/dsa/floor-in-a-sorted-array/" target="_blank">
+                Solution
+            </a>
+        </div>
     </div>
 
-    <!-- ================= ROTATED ARRAY ================= -->
+    <!-- ================= ROTATED SORTED ARRAY ================= -->
     <div class="section-header">Rotated Sorted Array</div>
 
     <div class="row">
-        <div class="seq">5</div>
+        <div class="dot">•</div>
         <div class="problem">
+            Find the minimum element in a rotated sorted array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
             <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank">
-                Find Min / Max element in a rotated sorted array
+                Solution
             </a>
         </div>
-        <div class="difficulty medium">Medium</div>
     </div>
 
     <div class="row">
-        <div class="seq">6</div>
+        <div class="dot">•</div>
         <div class="problem">
-            <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank">
-                Find an element in a rotated sorted array
+            Find the maximum element in a rotated sorted array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
+            <a href="https://www.geeksforgeeks.org/dsa/maximum-element-in-a-sorted-and-rotated-array/" target="_blank">
+                Solution
             </a>
         </div>
-        <div class="difficulty medium">Medium</div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Search for a target value in a rotated sorted array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
+            <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank">
+                Solution
+            </a>
+        </div>
     </div>
 
     <!-- ================= TWO SORTED ARRAYS ================= -->
     <div class="section-header">Two Sorted Arrays</div>
 
     <div class="row">
-        <div class="seq">7</div>
+        <div class="dot">•</div>
         <div class="problem">
-            Find the k<sup>th</sup> smallest element in two sorted arrays
+            Find the kᵗʰ smallest element using binary search on partitions
+            <span class="tag hard">Hard</span>
         </div>
-        <div class="difficulty hard">Hard</div>
+        <div class="solve-link">
+            <a href="https://www.geeksforgeeks.org/dsa/k-th-element-two-sorted-arrays/" target="_blank">
+                Solution
+            </a>
+        </div>
     </div>
 
     <div class="row">
-        <div class="seq">8</div>
+        <div class="dot">•</div>
         <div class="problem">
+            Find the median of two sorted arrays in logarithmic time
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solve-link">
             <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank">
-                Find the median using the same logic
+                Solution
             </a>
         </div>
-        <div class="difficulty hard">Hard</div>
     </div>
 
     <!-- ================= MATRIX SEARCH ================= -->
     <div class="section-header">Binary Search on Matrix</div>
 
     <div class="row">
-        <div class="seq">9</div>
+        <div class="dot">•</div>
         <div class="problem">
+            Search a value in a fully sorted 2D matrix
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
             <a href="https://leetcode.com/problems/search-a-2d-matrix/" target="_blank">
-                Search in matrix (row-wise & column-wise sorted,
-                row first ≥ previous row last)
+                Solution
             </a>
         </div>
-        <div class="difficulty medium">Medium</div>
-    </div>
-
-    <div class="row">
-        <div class="seq">10</div>
-        <div class="problem">
-            Binary Search on matrix with O(log(m × n))
-        </div>
-        <div class="difficulty medium">Medium</div>
-    </div>
-
-    <div class="row">
-        <div class="seq">11</div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/search-a-2d-matrix-ii/" target="_blank">
-                No condition → Two pointers solution (O(m + n))
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
     </div>
 
     <!-- ================= PEAK ELEMENT ================= -->
     <div class="section-header">Peak Element</div>
 
     <div class="row">
-        <div class="seq">12</div>
+        <div class="dot">•</div>
         <div class="problem">
+            Find any peak element greater than its neighbors
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solve-link">
             <a href="https://leetcode.com/problems/find-peak-element/" target="_blank">
-                Find a peak element (greater than neighbors) in an unsorted array
+                Solution
             </a>
         </div>
-        <div class="difficulty medium">Medium</div>
     </div>
 
 </div>
