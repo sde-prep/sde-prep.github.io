@@ -2,228 +2,158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Graph Problems – DSA</title>
+    <title>Graph – DSA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1350px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-            counter-reset: row;
-        }
-
-        .banner {
-            background: linear-gradient(135deg, #6366f1, #22d3ee);
-            padding: 36px 20px;
-            text-align: center;
-        }
-
-        .banner h1 {
-            margin: 0 0 8px;
-            color: #ffffff;
-        }
-
-        .banner p {
-            margin: 0;
-            color: #e0f2fe;
-            max-width: 900px;
-            margin-inline: auto;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 70px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-            counter-increment: row;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq::before {
-            content: counter(row);
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .problem a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .problem a:hover {
-            text-decoration: underline;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-        .note { color: #6b7280; font-style: italic; }
-
-        footer {
-            text-align: center;
-            margin: 30px 0 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div class="banner">
+    <div class="header">
         <h1>Graph Algorithms</h1>
         <p>
             BFS, DFS, MST, Dijkstra, Topological Sort, and classic graph interview problems.
         </p>
     </div>
 
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
     <!-- ================= MST ================= -->
     <div class="section-header">Minimum Spanning Tree (MST)</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Kruskal Algorithm (Disjoint Set) - Time Complexity: O(E log V + E log E)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Kruskal Algorithm (Disjoint Set) - Time Complexity: O(E log V + E log E) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/" target="_blank">Solution</a> </div>
+    </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/min-cost-to-connect-all-points/" target="_blank">
-                Min Cost to Connect All Points
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Min Cost to Connect All Points <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/min-cost-to-connect-all-points/" target="_blank">Solution</a></div>
     </div>
 
     <!-- ================= SHORTEST PATH ================= -->
     <div class="section-header">Shortest Path (Weighted Graph)</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Dijkstra Algorithm: Source → All vertices - Time Complexity: O(E log V)</div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Dijkstra Algorithm: Source → All vertices - Time Complexity: O(E log V) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/" target="_blank">Solution</a> </div>
+    </div>
 
     <!-- ================= TOPOLOGICAL SORT ================= -->
     <div class="section-header">Topological Sorting (DAG)</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Kahn’s Algorithm (BFS based) - Time Complexity: O(V + E)</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/course-schedule/" target="_blank">
-                Can Finish All Courses
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Kahn’s Algorithm (BFS based) - Time Complexity: O(V + E) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/topological-sorting-indegree-based-solution/" target="_blank">Solution</a> </div>
     </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank">
-                Course Schedule – Return Order
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Can Finish All Courses <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/course-schedule/" target="_blank">Solution</a></div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Course Schedule – Return Order <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank">Solution</a></div>
     </div>
 
     <!-- ================= GRAPH IMPLEMENTATION ================= -->
     <div class="section-header">Graph Implementation</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Adjacency Matrix</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Adjacency List</div><div class="difficulty easy">Easy</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Adjacency Matrix <span class="tag easy">Easy</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/adjacency-matrix/" target="_blank">Solution</a> </div>
+    </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/clone-graph/" target="_blank">
-                Clone a Graph
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Adjacency List <span class="tag easy">Easy</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/adjacency-list-meaning-definition-in-dsa/" target="_blank">Solution</a></div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Clone a Graph <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/clone-graph/" target="_blank">Solution</a></div>
     </div>
 
     <!-- ================= TRAVERSALS ================= -->
     <div class="section-header">Graph Traversal</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">BFS (Queue + visited[]) - Used for shortest path</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">DFS (Recursion + visited[]) - Used to find all path</div><div class="difficulty easy">Easy</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">BFS (Queue + visited[]) - Used for shortest path <span class="tag easy">Easy</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/" target="_blank">Solution</a></div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">DFS (Recursion + visited[]) - Used to find all path <span class="tag easy">Easy</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/" target="_blank">Solution</a></div>
+    </div>
 
     <!-- ================= QUESTIONS ================= -->
     <div class="section-header">Graph Problems</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Snake & Ladder – Min Steps (BFS)</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/bus-routes/" target="_blank">
-                Bus Routes (BFS Variant)
-            </a>
-        </div>
-        <div class="difficulty hard">Hard</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Snake & Ladder – Min Steps (BFS) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/snakes-and-ladders/" target="_blank">Solution</a> </div>
     </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href=" https://leetcode.com/problems/bus-routes" target="_blank">
-                Routes run infinitely: 1 → 5 → 7 → 1 → ...
-            </a>
-        </div>
-    <div class="difficulty easy">Note</div></div>
-
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://www.geeksforgeeks.org/shortest-path-in-a-binary-maze/" target="_blank">
-                Min Distance Between Two Cells (Grid BFS)
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Bus Routes (BFS Variant) <span class="tag hard">Hard</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/bus-routes/" target="_blank">Solution</a></div>
     </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/evaluate-division/" target="_blank">
-                Evaluate Division (DFS Graph)
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Return the least number of buses you must take to travel from source to target. Routes run infinitely: 1 → 5 → 7 → 1 → ... <span class="tag hard">Hard</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/bus-routes/description/" target="_blank">Solution</a> </div>
     </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/minimum-genetic-mutation/" target="_blank">
-                Minimum Genetic Mutation (BFS)
-            </a>
-        </div>
-        <div class="difficulty medium">Medium</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Min Distance Between Two Cells (Grid BFS) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/shortest-path-in-a-binary-maze/" target="_blank">Solution</a></div>
     </div>
 
-    <div class="row"><div class="seq"></div>
-        <div class="problem">
-            <a href="https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/" target="_blank">
-                Min Score After Two Edge Removal
-            </a>
-        </div>
-        <div class="difficulty hard">Hard</div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Evaluate Division (DFS Graph) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/evaluate-division/" target="_blank">Solution</a></div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Minimum Genetic Mutation (BFS) <span class="tag medium">Medium</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/minimum-genetic-mutation/" target="_blank">Solution</a></div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Min Score After Two Edge Removal <span class="tag hard">Hard</span></div>
+        <div class="solution"><a href="https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/" target="_blank">Solution</a></div>
     </div>
 
 </div>
