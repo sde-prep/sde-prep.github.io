@@ -1,0 +1,152 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f9fafb;
+    padding: 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    padding: 36px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header p {
+    margin: 0 auto;
+    max-width: 720px;
+    font-size: 1rem;
+    color: #e0f2fe;
+    line-height: 1.6;
+}
+
+.section-header {
+    background: #f3f4f6;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top: 1px solid #e5e7eb;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 40px 1fr 140px;
+    padding: 14px 20px;
+    border-top: 1px solid #e5e7eb;
+    align-items: center;
+}
+
+.row:hover {
+    background: #fafafa;
+}
+
+.dot {
+    font-size: 1.5rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.problem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #111;
+    flex-wrap: wrap;
+}
+
+/**************** Difficulty tags CSS *****************/
+.tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.easy {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.hard {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/************* Solution Link CSS **********************************/
+.solution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.na {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/************* Filter Bar CSS **********************************/
+.filter-bar {
+    padding: 12px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.filter-bar select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+}
+
+/************* Footer CSS *************************************/
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+/************* Contact Button CSS ******************************/
+.contact-btn {
+position: fixed;       /* Fixed to viewport */
+top: 20px;             /* Distance from top */
+right: 20px;           /* Distance from right */
+padding: 12px 24px;
+font-size: 1rem;
+background-color: #222;
+color: #fff;
+text-decoration: none;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+transition: background 0.3s ease, transform 0.2s ease;
+z-index: 1000;         /* Make sure it’s above everything */
+}
+
+.contact-btn:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
