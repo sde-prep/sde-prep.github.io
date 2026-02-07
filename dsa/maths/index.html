@@ -2,251 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Maths Problems – DSA</title>
+    <title>Maths</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-            counter-reset: row-counter;
-        }
-
-        .banner {
-            background: linear-gradient(135deg, #f43f5e, #ec4899);
-            padding: 36px 20px;
-            text-align: center;
-        }
-
-        .banner h1 {
-            margin: 0 0 8px;
-            color: #ffffff;
-        }
-
-        .banner p {
-            margin: 0;
-            color: #fbcfe8;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 60px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-            counter-increment: row-counter;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq::before {
-            content: counter(row-counter);
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .problem a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .problem a:hover {
-            text-decoration: underline;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div class="banner">
+    <div class="header">
         <h1>Maths Problems</h1>
         <p>
             Prime numbers, combinatorics, puzzles, geometry, and number theory problems.
         </p>
     </div>
 
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
     <!-- ================= PRIME NUMBERS ================= -->
     <div class="section-header">Prime Numbers</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a number is prime</div>
-        <div class="difficulty easy">Easy</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a number is prime
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/check-for-prime-number/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Calculate all prime numbers till N</div>
-        <div class="difficulty medium">Medium</div>
-    </div>
-
-    <!-- ================= CATALAN & COMBINATORICS ================= -->
-    <div class="section-header">Catalan Number</div>
-
-    <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Catalan Number Cn: 2nCn / (n+1) or Cn = Cn-1 * ((4n-2)/(n+1)) :- Find Balanced Parenthesis arrangements & Number of BST</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Calculate all prime numbers till N
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/count-primes/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <!-- ================= PUZZLES & DP ================= -->
     <div class="section-header">Puzzle & DP Problems</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Perform A/B without using *, /, or % operator</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Perform A/B without using *, /, or % operator
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/add-two-numbers-without-using-arithmetic-operators/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Egg Drop Puzzle – 2 Eggs & 100 Floors</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Egg Drop Puzzle – 2 Eggs & 100 Floors
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/aptitude/puzzle-set-35-2-eggs-and-100-floors/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Egg Drop Puzzle – K Eggs & N Floors (DP)</div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Egg Drop Puzzle – 2 Eggs & N Floors
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Count trailing zeroes in n!</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Egg Drop Puzzle – K Eggs & N Floors (DP)
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/super-egg-drop/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Form the largest number from an integer array</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Count trailing zeroes in n!
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/factorial-trailing-zeroes/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Max Points on a line</div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Form the largest number from an integer array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/largest-number/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Next Greater Number</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Max Points on a line
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/max-points-on-a-line/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Square root of x</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Next Greater Number
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/next-greater-element-iii/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Generate the nth ugly number (factors 2,3,5 only)</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Square root of x
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/sqrtx/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a string is a valid number</div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Generate the nth ugly number (factors 2,3,5 only)
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="xxx" target="_blank">Solution</a>   </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Check if a string is a valid number
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/valid-number/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <!-- ================= GEOMETRY & POINTS ================= -->
     <div class="section-header">Points & Geometry</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Count Triangles from a given array</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Count Triangles from a given array
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/valid-triangle-number/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if 4 points form a rectangle</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if 4 points form a rectangle
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/check-four-segments-form-rectangle/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if 4 points form a square</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if 4 points form a square
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/check-given-four-points-form-square/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if two line segments intersect</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if two line segments intersect
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/check-if-two-given-line-segments-intersect/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a point is inside a triangle</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a point is inside a triangle
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/check-whether-a-given-point-lies-inside-a-triangle-or-not/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a point is inside a polygon</div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a point is inside a polygon
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/how-to-check-if-a-given-point-lies-inside-a-polygon/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Closest pair in a 2D plane</div>
-        <div class="difficulty hard">Hard</div>
+        <div class="dot">•</div>
+        <div class="problem">Closest pair in a 2D plane
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution"><a href="https://www.geeksforgeeks.org/dsa/closest-pair-of-points-onlogn-implementation/" target="_blank">Solution</a>   </div>
     </div>
 
     <!-- ================= POWER CHECKS ================= -->
     <div class="section-header">Power Checks</div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a number is power of 3</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a number is power of 3
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/power-of-three/description/" target="_blank">Solution</a>   </div>
     </div>
 
     <div class="row">
-        <div class="seq"></div>
-        <div class="problem">Check if a number is power of 4</div>
-        <div class="difficulty medium">Medium</div>
+        <div class="dot">•</div>
+        <div class="problem">Check if a number is power of 4
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution"><a href="https://leetcode.com/problems/power-of-four/description/" target="_blank">Solution</a>   </div>
     </div>
 
 </div>
@@ -257,4 +226,3 @@
 
 </body>
 </html>
-
