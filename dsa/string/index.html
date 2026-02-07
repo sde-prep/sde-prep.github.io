@@ -2,141 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>String Problems – DSA</title>
+    <title>String</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 60px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq {
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .problem a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .problem a:hover {
-            text-decoration: underline;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div style="
-        background: linear-gradient(135deg, #ec4899, #8b5cf6);
-        padding: 36px 20px;
-        text-align: center;
-    ">
-        <h1 style="margin:0 0 8px; color:#fff;">String Problems</h1>
-        <p style="margin:0; color:#fce7f3;">
-            Sliding window, hashing, palindrome logic, pattern matching, and real interview string tricks.
-        </p>
+    <div class="header">
+        <h1>String Problems</h1>
+        <p>Sliding window, hashing, palindrome logic, pattern matching, and interview-grade string techniques.</p>
     </div>
 
-    <!-- ================= SLIDING WINDOW ================= -->
-    <div class="section-header">Sliding Window & Frequency</div>
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
 
-    <div class="row"><div class="seq">1</div><div class="problem">Smallest window containing all characters</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">2</div><div class="problem">Find characters in the same string (frequency = 1)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">3</div><div class="problem"><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Exact frequency match from another string</a></div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">4</div><div class="problem"><a href="https://leetcode.com/problems/group-anagrams/" target="_blank">Group Anagrams</a></div><div class="difficulty medium">Medium</div></div>
+    <!-- ================= MIN WINDOW ================= -->
+    <div class="section-header">Min Window</div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Smallest window containing all characters<span class="tag hard">Hard</span></div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">Smallest window with exact frequency match<span class="tag hard">Hard</span></div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= PALINDROME ================= -->
     <div class="section-header">Palindrome</div>
 
-    <div class="row"><div class="seq">5</div><div class="problem">Longest Palindromic Substring</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">6</div><div class="problem">Check if a number is a palindrome</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">7</div><div class="problem">Check if a string is a palindrome</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">8</div><div class="problem"><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">Check sentence palindrome (ignore non-alphanumeric)</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">9</div><div class="problem">Palindrome without extra space</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">10</div><div class="problem"><a href="https://leetcode.com/problems/valid-palindrome-ii/" target="_blank">Palindrome after removing at most 1 character</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">11</div><div class="problem"><a href="https://www.geeksforgeeks.org/check-if-stream-of-characters-forms-a-palindrome/" target="_blank">Palindrome in a character stream</a></div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">12</div><div class="problem"><a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank">All Palindromic Partitions</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Longest palindromic substring <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Check if a number is a palindrome <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/palindrome-number/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Check if a string is a palindrome <span class="tag easy">Easy</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/palindrome-string/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Valid palindrome (ignore non-alphanumeric) <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Palindrome after removing at most one character <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/valid-palindrome-ii/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Check if a stream forms a palindrome <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/check-if-stream-of-characters-forms-a-palindrome/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">All palindromic partitions <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank">Solution</a></div></div>
 
     <!-- ================= PATTERN MATCHING ================= -->
     <div class="section-header">Pattern Search Algorithms</div>
 
-    <div class="row"><div class="seq">13</div><div class="problem">KMP Algorithm</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">14</div><div class="problem">Z Algorithm</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">15</div><div class="problem"><a href="https://leetcode.com/problems/longest-happy-prefix/" target="_blank">Longest Happy Prefix</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">16</div><div class="problem"><a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank">Shortest Palindrome (add in front)</a></div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">KMP Algorithm <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/kmp-algorithm-for-pattern-searching/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Z Algorithm <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/z-algorithm-linear-time-pattern-searching-algorithm/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Longest happy prefix <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-happy-prefix/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Shortest palindrome <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank">Solution</a></div></div>
 
-    <!-- ================= OTHER STRING PROBLEMS ================= -->
+    <!-- ================= OTHER ================= -->
     <div class="section-header">Other Important Problems</div>
 
-    <div class="row"><div class="seq">17</div><div class="problem"><a href="https://leetcode.com/problems/multiply-strings/" target="_blank">Multiply Two Number Strings</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">18</div><div class="problem"><a href="https://leetcode.com/problems/rotate-string/" target="_blank">Check if Strings are Rotations</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">19</div><div class="problem"><a href="https://leetcode.com/problems/compare-version-numbers/" target="_blank">Compare Version Numbers</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">20</div><div class="problem"><a href="https://leetcode.com/problems/decode-string/" target="_blank">Decode String (3[a2[c]] → accaccacc)</a></div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq">21</div><div class="problem"><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank">Excel Sheet Title (A → 1, AA → 27)</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">22</div><div class="problem"><a href="https://leetcode.com/problems/excel-sheet-column-number/" target="_blank">Excel Title to Number</a></div><div class="difficulty easy">Easy</div></div>
-
-    <div class="row"><div class="seq">23</div><div class="problem"><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank">Isomorphic Strings</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">24</div><div class="problem"><a href="https://leetcode.com/problems/is-subsequence/" target="_blank">Is Subsequence</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">25</div><div class="problem"><a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/" target="_blank">Longest Substring with ≤ 2 Distinct Characters</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">26</div><div class="problem"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">Longest Substring Without Repeating Characters</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">27</div><div class="problem"><a href="https://leetcode.com/problems/maximum-score-from-removing-substrings/" target="_blank">Max Score by Removing ab / ba</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">28</div><div class="problem"><a href="https://leetcode.com/problems/ransom-note/" target="_blank">Construct String from Another String</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">29</div><div class="problem"><a href="https://leetcode.com/problems/repeated-dna-sequences/" target="_blank">Repeated DNA Sequences</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">30</div><div class="problem"><a href="https://leetcode.com/problems/repeated-substring-pattern/" target="_blank">Repeated Substring Pattern</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">31</div><div class="problem"><a href="https://leetcode.com/problems/reverse-words-in-a-string/" target="_blank">Reverse Words in a Sentence</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">32</div><div class="problem"><a href="https://leetcode.com/problems/word-pattern/" target="_blank">Word Pattern Mapping</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">33</div><div class="problem"><a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/" target="_blank">Substring with Concatenation of All Words</a></div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Multiply two number strings <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/multiply-strings/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Check if strings are rotations <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/rotate-string/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Compare version numbers <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/compare-version-numbers/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Decode encoded string (e.g. 3[a2[c]]) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/decode-string/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Excel sheet column title / number <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Isomorphic strings <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Is subsequence <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/is-subsequence/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Longest substring without repeating characters <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Substring with concatenation of all words <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/" target="_blank">Solution</a></div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Group Anagrams <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/group-anagrams/" target="_blank">Solution</a></div></div>
 
 </div>
 
