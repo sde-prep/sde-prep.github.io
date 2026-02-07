@@ -4,208 +4,135 @@
     <meta charset="UTF-8">
     <title>Backtracking & DP – DSA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1500px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-            counter-reset: row;
-        }
-
-        .banner {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            padding: 36px 20px;
-            text-align: center;
-        }
-
-        .banner h1 {
-            margin: 0 0 8px;
-            color: #ffffff;
-        }
-
-        .banner p {
-            margin: 0;
-            color: #fce7f3;
-            max-width: 1100px;
-            margin-inline: auto;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 70px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-            counter-increment: row;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq::before {
-            content: counter(row);
-            color: #6b7280;
-        }
-
-        .problem {
-            font-weight: 500;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        /* ================= FOOTER ================= */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-        .note { color: #6b7280; font-style: italic; }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div class="banner">
+    <div class="header">
         <h1>Backtracking & Dynamic Programming</h1>
         <p>
             Classic recursion, memoization, grid DP, knapsack patterns, string DP, games, and optimization problems.
         </p>
     </div>
 
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
     <!-- ================= STOCK ================= -->
     <div class="section-header">Stock Buy & Sell</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">At most one transaction</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">At most two transactions</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Unlimited transactions</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">At most k transactions (Backtracking + DP)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">At most one transaction <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">At most two transactions <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Unlimited transactions <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">At most k transactions (Backtracking + DP) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= MATRIX ================= -->
     <div class="section-header">Matrix (Backtracking + DP)</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Longest Consecutive Increasing Sequence in a Matrix</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Palindromic Paths from TopLeft to BottomRight</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Number of Islands (DFS / BFS / Disjoint Set)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Flood Fill</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Replace Surrounded O with X</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Paths with Exactly K Coins (Right & Down)</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Collect Max Coins with Direction Change Rules</div><div class="difficulty hard">Hard</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Collect Max Coins (Forward + Return Path)</div><div class="difficulty hard">Hard</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Two Traversals Max Points (3D DP)</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Longest Consecutive Increasing Sequence in a Matrix <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/longest-increasing-consecutive-subsequence/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Palindromic Paths from TopLeft to BottomRight <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/print-palindromic-paths-top-left-bottom-right-matrix/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Number of Islands (DFS / BFS / Disjoint Set) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/number-of-islands/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Flood Fill <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/flood-fill/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Replace Surrounded O with X - Variant of Flood Fill<span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/surrounded-regions/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Paths with Exactly K Coins (Right & Down) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/number-of-paths-with-exactly-k-coins/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Collect Max Coins with Direction Change Rules <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/collect-maximum-coins-before-hitting-a-dead-end/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Collect Max Coins (Forward + Return Path) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/maximum-points-top-left-matrix-bottom-right-return-back/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Two Traversals Max Points (3D DP) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/collect-maximum-points-in-a-grid-using-two-traversals/" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= CHESS ================= -->
     <div class="section-header">Chessboard Problems</div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Count Knight Moves</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Knight Tour (Generate & Validate)</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Count Queen Moves with Blockers</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">N-Queen Problem</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">N-Queen Problem <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/n-queens/description/" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= PERMUTATION ================= -->
     <div class="section-header">Permutations & Combinations</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Power Set (All Subsets)</div><div class="difficulty easy">Easy</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Unique Permutations (Distinct Elements)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Unique Permutations (With Duplicates)</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Next Permutation</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Kth Permutation</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Combinations of Size K</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Combination Sum (Unique & Duplicate Variants)</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Count Subsets with Sum = K (Memoization)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Count Subsets with Sum Divisible by K</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Power Set (All Subsets) <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/subsets/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Unique Permutations (Distinct Elements) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/permutations-ii/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Unique Permutations (With Duplicates) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/permutations/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Next Permutation <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/next-permutation/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Kth Permutation <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/permutation-sequence/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">All Subsets of Size K <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/combinations/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">All Subsets with Sum = K  <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/combination-sum-ii/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">All Subsets with Sum Divisible by K <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/subset-sum-divisible-m/" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= PARENTHESIS ================= -->
     <div class="section-header">Parenthesis & Expressions</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Generate Balanced Parentheses</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Different Ways to Add Parentheses</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Boolean Parenthesization</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Generate Balanced Parentheses <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/generate-parentheses/" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= STRING ================= -->
     <div class="section-header">String (Backtracking + DP)</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Word Search (Single Word)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Word Search II (Trie)</div><div class="difficulty hard">Hard</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Word Ladder (Shortest Path)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Word Ladder II (All Paths)</div><div class="difficulty hard">Hard</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Distinct Subsequences</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Edit Distance</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Interleaving String</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Restore IP Addresses</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Decode Ways</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Letter Combinations of Phone Number</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Scramble String</div><div class="difficulty hard">Hard</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Search (Single Word) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/word-search" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Search II (Trie) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/word-search-ii" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Ladder (Shortest Path) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/word-ladder" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Ladder II (All Paths) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/word-ladder-ii" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Distinct Subsequences <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/distinct-subsequences" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Edit Distance <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/edit-distance" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Wildcard Pattern Matching <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/wildcard-matching" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Break - Check <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/word-break" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Break - Print <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/word-break-ii" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Word Wrap Problem <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/word-wrap-problem-dp-19" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Interleaving String <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/interleaving-string" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Restore IP Addresses <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/restore-ip-addresses" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Decode Ways <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/decode-ways" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Letter Combinations of Phone Number <span class="tag easy">Easy</span></div><div class="solution"><a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Scramble String <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/scramble-string" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= GAMES ================= -->
     <div class="section-header">Games</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Sudoku (Generator / Validator / Solver)</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Tug of War</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Optimal Strategy for a Game</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Sudoku Generator <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/program-sudoku-generator" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Sudoku Validator <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/valid-sudoku" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Sudoku Solver <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/sudoku-solver" target="_blank">Solution</a>   </div></div>
+
+    <div class="row"><div class="dot">•</div><div class="problem">Tug of War <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/tug-of-war" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Optimal Strategy for a Game <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/predict-the-winner" target="_blank">Solution</a>   </div></div>
 
     <!-- ================= KNAPSACK ================= -->
-    <div class="section-header">Knapsack & DP Classics</div>
+    <div class="section-header">Knapsack</div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Fractional Knapsack</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">0/1 Knapsack</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Bounded Knapsack</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Unbounded Knapsack</div><div class="difficulty medium">Medium</div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Fractional Knapsack <span class="tag medium">Medium</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/fractional-knapsack-problem" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">0/1 Knapsack <span class="tag medium">Medium</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/0-1-knapsack-problem-dp-10/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Bounded Knapsack <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/extended-knapsack-problem/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Unbounded Knapsack <span class="tag medium">Medium</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Min Coin Change<span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/coin-change" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Coin Change Ways<span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/coin-change-ii" target="_blank">Solution</a>   </div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Coin Change (Min Coins & Ways)</div><div class="difficulty medium">Medium</div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">LCS (Length, One, All)</div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">LPS (LCS Variant)</div><div class="difficulty medium">Medium</div></div>
+    <!-- ================= LCS ================= -->
+    <div class="section-header">Longest Common Subsequence (LCS)</div>
+    <div class="row"><div class="dot">•</div><div class="problem">LCS - Length<span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-common-subsequence/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">LCS - Print One <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/printing-longest-common-subsequence/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">LCS - Print All <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/print-longest-common-sub-sequences-lexicographical-order/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">LPS (LCS Variant) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-palindromic-subsequence/description/" target="_blank">Solution</a>   </div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">LIS (N² & NlogN)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">LIS Variants (Box Stacking, Bridges)</div><div class="difficulty hard">Hard</div></div>
+    <!-- ================= LCS ================= -->
+    <div class="section-header">Longest Increasing Subsequence (LIS)</div>
+    <div class="row"><div class="dot">•</div><div class="problem">LIS (N² & NlogN) <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/longest-increasing-subsequence" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Box Stacking - LIS Variant (, Bridges) <span class="tag hard">Hard</span></div><div class="solution"><a href="https://leetcode.com/problems/maximum-height-by-stacking-cuboids" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Building Bridges - LIS Variant <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/dsa/dynamic-programming-building-bridges" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Max Sum of Increasing Subsequence - LIS Variant <span class="tag hard">Hard</span></div><div class="solution"><a href="https://www.geeksforgeeks.org/maximum-sum-increasing-subsequence-dp-14" target="_blank">Solution</a>   </div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Wildcard Pattern Matching</div><div class="difficulty hard">Hard</div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Word Break (Check & Print)</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Word Wrap Problem</div><div class="difficulty hard">Hard</div></div>
 
-    <div class="row"><div class="seq"></div><div class="problem">Candy Distribution</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq"></div><div class="problem">Min Jumps (Check & Count)</div><div class="difficulty medium">Medium</div></div>
-
-    <div class="row"><div class="seq"></div><div class="problem">Max Subsequence with Mod Condition</div><div class="difficulty hard">Hard</div></div>
-
+    <!-- ================= MISC ================= -->
+    <div class="section-header">Misc</div>
+    <div class="row"><div class="dot">•</div><div class="problem">Candy Distribution <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/candy/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Min Jumps - Check <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/jump-game/description/" target="_blank">Solution</a>   </div></div>
+    <div class="row"><div class="dot">•</div><div class="problem">Min Jumps - Count <span class="tag medium">Medium</span></div><div class="solution"><a href="https://leetcode.com/problems/jump-game-ii/description/" target="_blank">Solution</a>   </div></div>
 </div>
 
 <footer>
