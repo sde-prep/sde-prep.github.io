@@ -4,141 +4,329 @@
     <meta charset="UTF-8">
     <title>Linked List Problems – DSA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f9fafb;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 60px 1fr 90px;
-            padding: 14px 20px;
-            border-top: 1px solid #e5e7eb;
-            align-items: center;
-        }
-
-        .row:hover {
-            background: #fafafa;
-        }
-
-        .seq {
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .problem a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .problem a:hover {
-            text-decoration: underline;
-        }
-
-        .difficulty {
-            text-align: right;
-            font-weight: 600;
-        }
-
-        .easy { color: #16a34a; }
-        .medium { color: #f59e0b; }
-        .hard { color: #ef4444; }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../common-dsa-problems-style.css">
+    <script src="../../common-dsa-problems-script.js"></script>
 </head>
 
 <body>
 <div class="container">
 
     <!-- ================= BANNER ================= -->
-    <div style="
-        background: linear-gradient(135deg, #06b6d4, #3b82f6);
-        padding: 36px 20px;
-        text-align: center;
-    ">
-        <h1 style="margin:0 0 8px; color:#fff;">Linked List Problems</h1>
-        <p style="margin:0; color:#e0f2fe;">
-            Pointer manipulation, cycle detection, reversing tricks, and classic interview patterns.
+    <div class="header">
+        <h1>Linked List</h1>
+        <p>
+            Linked list problems focus on pointer manipulation, traversal techniques,
+            cycle detection, reversal strategies, and common interview patterns.
+            Below are interview-ready linked list questions grouped by concept.
         </p>
+    </div>
+
+    <!-- ================= FILTER ================= -->
+    <div class="filter-bar">
+        Filter by difficulty:
+        <select id="difficultyFilter" onchange="filterRows()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
     </div>
 
     <!-- ================= REMOVE NODES ================= -->
     <div class="section-header">Remove Nodes</div>
 
-    <div class="row"><div class="seq">1</div><div class="problem"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank">Remove duplicates from a sorted linked list</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">2</div><div class="problem"><a href="https://leetcode.com/problems/remove-linked-list-elements/" target="_blank">Remove nodes with a given value</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">3</div><div class="problem"><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">Remove Nth node from the end</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Remove duplicates from a sorted linked list
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Remove nodes with a given value
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/remove-linked-list-elements/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Remove Nth node from the end
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= LOOP ================= -->
     <div class="section-header">Linked List Loop</div>
 
-    <div class="row"><div class="seq">4</div><div class="problem"><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">Detect a loop in a linked list</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">5</div><div class="problem"><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank">Find the starting point of the loop</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">6</div><div class="problem"><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">Check if two linked lists merge & find merge point</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Detect a loop in a linked list
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Find the starting point of the loop
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Check if two linked lists merge and find merge point
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= MERGE ================= -->
     <div class="section-header">Merge Linked Lists</div>
 
-    <div class="row"><div class="seq">7</div><div class="problem"><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">Merge 2 sorted linked lists</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">8</div><div class="problem"><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge K sorted linked lists</a></div><div class="difficulty hard">Hard</div></div>
-    <div class="row"><div class="seq">9</div><div class="problem"><a href="https://www.geeksforgeeks.org/flattening-a-linked-list/" target="_blank">Flatten a 2D singly linked list</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">10</div><div class="problem"><a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/" target="_blank">Flatten a 2D doubly linked list</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Merge two sorted linked lists
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Merge K sorted linked lists
+            <span class="tag hard">Hard</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Flatten a 2D singly linked list
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://www.geeksforgeeks.org/flattening-a-linked-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Flatten a multilevel doubly linked list
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= REVERSE ================= -->
-    <div class="section-header">Reverse a Linked List</div>
+    <div class="section-header">Reverse Linked List</div>
 
-    <div class="row"><div class="seq">11</div><div class="problem">Reverse a complete linked list</div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">12</div><div class="problem">Reverse in blocks of size K</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">13</div><div class="problem"><a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">Swap nodes in pairs (K = 2)</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">14</div><div class="problem">Reverse alternate blocks of size K</div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">15</div><div class="problem"><a href="https://leetcode.com/problems/reverse-linked-list-ii/" target="_blank">Reverse between two indices</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Reverse a complete linked list
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/reverse-linked-list" target="_blank">Solution</a>
+        </div>
+    </div>
 
-    <!-- ================= REORDER ================= -->
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Reverse linked list in blocks of size K
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Swap nodes in pairs
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Reverse alternate blocks of size K
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://www.geeksforgeeks.org/dsa/reverse-alternate-k-nodes-in-a-singly-linked-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Reverse the linked list between two indices
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/reverse-linked-list-ii/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <!-- ================= REORDER & ROTATE ================= -->
     <div class="section-header">Reorder & Rotate</div>
 
-    <div class="row"><div class="seq">16</div><div class="problem"><a href="https://leetcode.com/problems/partition-list/" target="_blank">Partition list around value X</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">17</div><div class="problem"><a href="https://leetcode.com/problems/reorder-list/" target="_blank">Reorder list: L0 → Ln → L1 → Ln-1</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">18</div><div class="problem"><a href="https://leetcode.com/problems/rotate-list/" target="_blank">Rotate linked list by K nodes</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Partition the linked list around value X
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/partition-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Reorder list L0 → Ln → L1 → Ln-1
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/reorder-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Rotate the linked list by K nodes
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/rotate-list/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= SORT ================= -->
-    <div class="section-header">Sort a Linked List</div>
+    <div class="section-header">Sort Linked List</div>
 
-    <div class="row"><div class="seq">19</div><div class="problem"><a href="https://leetcode.com/problems/insertion-sort-list/" target="_blank">Insertion Sort on Linked List</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">20</div><div class="problem"><a href="https://leetcode.com/problems/sort-list/" target="_blank">Merge Sort on Linked List</a></div><div class="difficulty medium">Medium</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Insertion sort on a linked list
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/insertion-sort-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Merge sort on a linked list
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/sort-list/" target="_blank">Solution</a>
+        </div>
+    </div>
 
     <!-- ================= OTHER ================= -->
     <div class="section-header">Other Important Problems</div>
 
-    <div class="row"><div class="seq">21</div><div class="problem"><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">Add Two Numbers</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">22</div><div class="problem"><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">Copy Linked List with Random Pointer</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">23</div><div class="problem"><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank">Check if Linked List is Palindrome</a></div><div class="difficulty easy">Easy</div></div>
-    <div class="row"><div class="seq">24</div><div class="problem"><a href="https://leetcode.com/problems/lru-cache/" target="_blank">Design LRU Cache</a></div><div class="difficulty medium">Medium</div></div>
-    <div class="row"><div class="seq">25</div><div class="problem"><a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank">Binary Linked List to Decimal</a></div><div class="difficulty easy">Easy</div></div>
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Add two numbers represented as linked lists
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Copy the linked list with a random pointer
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Check if the linked list is a palindrome
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Design LRU Cache
+            <span class="tag medium">Medium</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/lru-cache/" target="_blank">Solution</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="dot">•</div>
+        <div class="problem">
+            Convert a binary linked list to decimal
+            <span class="tag easy">Easy</span>
+        </div>
+        <div class="solution">
+            <a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank">Solution</a>
+        </div>
+    </div>
 
 </div>
 
